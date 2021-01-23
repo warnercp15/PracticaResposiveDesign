@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet"> 
+    <title>Practice CSS3 - Responsive Design</title>
+</head>
+<body>
+    <input type="checkbox" name="menu" id="menu" hidden>
+    <label for="menu">
+        <div class="containerMenu" onclick="addClass(this)">
+            <div id="buttonMenu">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
+        </div>
+    </label>
+    <nav>
+        <ul>
+            <li>Menu</li>
+            <li>Sobre nosotros</li>
+            <li>Proyectos</li>
+            <li>Otros</li>
+            <li>Contacto</li>
+        </ul>
+    </nav>
+    <div id="container">
+        <!-- aca se insertan los nuevos circulos desde js -->
+    </div>
+    <footer>
+        <p>By Warner Cortés &copy;2021</p>
+    </footer>
+    <link rel="stylesheet" href="index.css">
+    <script src='index.js'></script>
+</body>
+</html>
