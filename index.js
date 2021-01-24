@@ -3,11 +3,11 @@ function addClass(x) {
 }
 
 function addCircles(){
-    let listCircules=['Primero','Segundo','Tercero','Cuarto','Quinto','Sexto','Séptimo','Octavo','Noveno'];
+    let listCircules=['Primero','Segundo','Tercero','Cuarto','Quinto','Sexto','Séptimo','Octavo'];
     let container=document.getElementById('container');
     listCircules.forEach(circleName=>{
         container.insertAdjacentHTML('beforeend', `<div><p>${circleName}</p><button type="button">Eliminar</button></div>`)
-    })
+    });
 }
 
 addCircles();
@@ -19,5 +19,6 @@ const listButtons=Array.from(buttonsCollection);  //transforma htmlList a list
 listButtons.forEach(item=>{
     item.addEventListener('click',()=>{
         item.parentNode.remove();
-    })
-})
+    });
+});
+

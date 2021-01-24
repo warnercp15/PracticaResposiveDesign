@@ -6,15 +6,16 @@
 }
 
 .bar1, .bar2, .bar3 {
+    background: #1b385c;
     width: 35px;
     height: 5px;
-    background-color: rgb(201, 193, 193);
     margin: 6px 0;
     transition: 0.4s;
 }
 
 .change .bar1 {
     -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+    -moz-transform: rotate(-45deg) translate(-9px, 6px);
     transform: rotate(-45deg) translate(-9px, 6px);
 }
 
@@ -22,44 +23,50 @@
 
 .change .bar3 {
     -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    -moz-transform: rotate(-45deg) translate(-9px, 6px);
     transform: rotate(45deg) translate(-8px, -8px);
 }
 
 .containerMenu{
-    padding: 2em;
+    width: 9vw;
+    height: 5vh;
     display: none;
-    background:rgb(9, 9, 116);
-    min-height: 8vh;
-    line-height: 8vh;
     padding: 0.5em;
 }
 
-#buttonMenu{
-    width: 5vw;
-    height: 3vh;
-    margin-top: 1.5vh;
+.containerMenu:hover{
+    cursor: pointer;
 }
+
 
 #menu:checked ~ nav{
     left: 0px;
 }
 
+#menu:checked ~ body{
+    background-color: rgba(41, 41, 41,1);
+}
+
 #container{
+    margin-top: 10vh;
     min-height: 90vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 #container > div{
-    background: rgb(70, 68, 68);
+    background: rgb(209, 205, 205);
     color: white;
-    display: inline-block;
     width: 20vw;
-    margin: 2em 5vh;
-    line-height: 30vh;
+    margin: 2vw;
+    line-height: 20vh;
     border-radius: 50%;
 }
 
 #container button{
-    color: white;
+    color: black;
     background: transparent;
     border: none;
 }
@@ -70,15 +77,14 @@
 }
 
 #container > div p{
-    width: 15vw;
-    height: 5vh;
-    margin: 3vh auto;
-    font-size: 30px;
+    color:#1b385c;
+    font-size: 1.5rem;
 }
 
 nav{
-    background:rgba(9, 9, 116,0.8);
     transition:all 0.3s;
+    position: fixed;
+    top: 0px;
 }
 
 nav,ul{
@@ -89,59 +95,64 @@ nav,ul{
 }
 
 ul{
-    background: transparent;
+    background: rgb(41, 41, 41);
     position: absolute;
+    min-height: 10vh;
     display: flex;
     justify-content: flex-start;
     align-items: center;
 }
 
 li{
-    background:rgba(9, 9, 116,0.8);
     flex-grow: 1;
-    min-height: 8vh;
-    line-height: 8vh;
+    min-height: 10vh;
+    line-height: 10vh;
     list-style: none;
 }
 
 li:hover{
-    background: white;
-    color: black;
-}
-
-li:checked{
-    background: white;
-    color: black;
+    background: #1b385c;
+    color: white;
 }
 
 footer{
-    background: rgb(39, 38, 38);
+    background: rgb(41, 41, 41);
     color: white;
     line-height: 15vh;
 }
 
-@media only screen and (max-width:800px){
+@media only screen and (max-width:768px){
+
+    body{
+        overflow-x: hidden;
+    }
     
     .containerMenu{
+        z-index: 99;
         display: block;
+        position: fixed;
+        top: 0px;
+        height: 5vh;
     }
 
     #container > div{
         display: block;
-        width: 35vw;
-        line-height: 25vh;
-        margin: 2em auto;
+        width: 40vw;
+        line-height: 15vh;
+        margin: 1em auto;
     }
 
     nav{
-        position: relative;
+        background: transparent;
         left: -100%;
     }
 
     ul{
+        position: fixed;
+        top: 8vh;
+        background: rgba(209, 205, 205,0.9);
+        color: #1b385c;
         width: 100%;
-        min-height: 50vh;
-        line-height: 50vh;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -149,7 +160,10 @@ footer{
     }
     
     li{
-        border: 1px solid rgb(133, 131, 131);
         width: 100%;
+        height: 15vh;
+        line-height: 15vh;
+        border: 1px solid  gray;
     }
+
 }
